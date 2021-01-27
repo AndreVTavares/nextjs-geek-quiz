@@ -1,7 +1,9 @@
 import styled from 'styled-components'
 
 import db from '../db.json';
+import Footer from '../src/components/Footer';
 
+import Widget from '../src/components/Widget';
 
 
 const BackgroundImage = styled.div`
@@ -20,12 +22,28 @@ export const QuizContainer = styled.div`
   }
 `;
 
+
 export default function Home() {
   return (
+    <>
     <BackgroundImage>
       <QuizContainer>
-        <strong style={{ fontSize: 24, color: '#9099FF' }}>Teste loko</strong>  
+        <Widget>
+          <Widget.Header>
+            <h1>Geek Quiz</h1>
+          </Widget.Header>
+          <Widget.Content>
+            <p>Conteudo do quiz fodão de geek</p>
+          </Widget.Content>
+        </Widget>  
+        <Widget>
+          <Widget.Content>
+            <h1>Quiz da galera</h1>
+          </Widget.Content>
+        </Widget> 
       </QuizContainer>
     </BackgroundImage>
+    <Footer/>
+    </>
   )
 }
