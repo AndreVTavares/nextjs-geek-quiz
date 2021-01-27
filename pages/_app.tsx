@@ -5,7 +5,21 @@ import db from '../db.json';
 
 import type { AppProps } from 'next/app';
 
-const GlobalStyle = createGlobalStyle`
+interface IGlobalStylesProps {
+  theme: {
+    colors: {
+      primary: string,
+      secondary: string,
+      mainBg: string,
+      contrastText: string,
+      wrong: string,
+      success: string
+    }
+    borderRadius: string
+  }
+}
+
+const GlobalStyle = createGlobalStyle<IGlobalStylesProps>`
     * {
     box-sizing: border-box;
   }
