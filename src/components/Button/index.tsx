@@ -1,12 +1,7 @@
-import { ReactChildren } from 'react';
+import { ButtonHTMLAttributes } from 'react';
 import styled from 'styled-components';
 
-interface IButtonProps {
-  type: 'submit' | 'button' | 'type';
-  children: ReactChildren;
-}
-
-const Button = styled.button<IButtonProps>`
+const Button = styled.button<ButtonHTMLAttributes<HTMLButtonElement>>`
   background-color: ${({ theme }) => theme.colors.secondary};
   color: ${({ theme }) => theme.colors.contrastText};
   border-radius: ${({ theme }) => theme.borderRadius};

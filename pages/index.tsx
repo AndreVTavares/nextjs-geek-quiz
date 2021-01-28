@@ -10,6 +10,8 @@ import QuizBackground from '../src/components/QuizBackground';
 import GitHubCorner from '../src/components/GitHubCorner';
 import QuizContainer from '../src/components/QuizContainer';
 import QuizLogo from '../src/components/QuizLogo';
+import Input from '../src/components/Input';
+import Button from '../src/components/Button';
 
 const Home: React.FC = () => {
   const router = useRouter();
@@ -35,15 +37,15 @@ const Home: React.FC = () => {
             </Widget.Header>
             <Widget.Content>
               <form onSubmit={handleSubmit}>
-                <input
+                <Input
                   name="name"
                   placeholder="Digite seu nome para jogar"
                   value={name}
                   onChange={e => setName(e.target.value)}
                 />
-                <button type="submit" disabled={name.length === 0}>
+                <Button type="submit" disabled={name.length === 0}>
                   Jogar {name}
-                </button>
+                </Button>
               </form>
             </Widget.Content>
           </Widget>
