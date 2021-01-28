@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 interface IQuizBackgroundProps {
-    backgroundImage: string;
+  backgroundImage: string;
 }
 
 const QuizBackground = styled.div<IQuizBackgroundProps>`
@@ -12,11 +12,13 @@ const QuizBackground = styled.div<IQuizBackgroundProps>`
   @media screen and (max-width: 500px) {
     background-image: none;
     &:after {
-      content: "";
+      content: '';
       background-size: cover;
-    background-position: center;
-      background-image:
-        linear-gradient(transparent, ${({ theme }) => theme.colors.mainBg}),
+      background-position: center;
+      background-image: linear-gradient(
+          transparent,
+          ${({ theme }) => theme.colors.mainBg}
+        ),
         url(${({ backgroundImage }) => backgroundImage});
       display: block;
       width: 100%;

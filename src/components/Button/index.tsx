@@ -1,9 +1,9 @@
-import { ReactChildren } from 'react'
+import { ReactChildren } from 'react';
 import styled from 'styled-components';
 
 interface IButtonProps {
-    type: 'submit' | 'button' | 'type';
-    children: ReactChildren
+  type: 'submit' | 'button' | 'type';
+  children: ReactChildren;
 }
 
 const Button = styled.button<IButtonProps>`
@@ -18,18 +18,16 @@ const Button = styled.button<IButtonProps>`
   line-height: 1;
   text-transform: uppercase;
   outline: 0;
-  transition: .3s;
+  transition: 0.3s;
   cursor: pointer;
   &:hover,
   &:focus {
-    opacity: .5;
+    opacity: 0.5;
   }
   &:disabled {
     background-color: #979797;
     cursor: not-allowed;
   }
 `;
-
-
 
 export default Button;
