@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { FormEvent, useState } from 'react';
 import Head from 'next/head';
 
+import { useRouter } from 'next/router';
 import db from '../db.json';
 
 import Footer from '../src/components/Footer';
@@ -11,6 +12,15 @@ import QuizContainer from '../src/components/QuizContainer';
 import QuizLogo from '../src/components/QuizLogo';
 
 const Home: React.FC = () => {
+  const router = useRouter();
+  const [name, setName] = useState('');
+
+  const handleSubmit = (event: FormEvent) => {
+    event.preventDefault();
+
+    router.push(`/quiz?name=${name}`);
+  };
+
   return (
     <>
       <QuizBackground backgroundImage={db.bg}>
@@ -24,7 +34,17 @@ const Home: React.FC = () => {
               <h1>Geek Quiz</h1>
             </Widget.Header>
             <Widget.Content>
-              <form />
+              <form onSubmit={handleSubmit}>
+                <input
+                  name="name"
+                  placeholder="Digite seu nome para jogar"
+                  value={name}
+                  onChange={e => setName(e.target.value)}
+                />
+                <button type="submit" disabled={name.length === 0}>
+                  Jogar {name}
+                </button>
+              </form>
             </Widget.Content>
           </Widget>
           <Widget>
