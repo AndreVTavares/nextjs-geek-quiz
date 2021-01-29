@@ -44,7 +44,7 @@ const Home: React.FC = () => {
                   onChange={e => setName(e.target.value)}
                 />
                 <Button type="submit" disabled={name.length === 0}>
-                  Jogar {name}
+                  {`Jogar ${name}`}
                 </Button>
               </form>
             </Widget.Content>

@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import Head from 'next/head';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
-
 import type { AppProps } from 'next/app';
+
 import db from '../db.json';
 
 interface IGlobalStylesProps {
@@ -45,7 +45,7 @@ const GlobalStyle = createGlobalStyle<IGlobalStylesProps>`
 
 const { theme } = db;
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps }: AppProps): ReactElement {
   return (
     <>
       <Head>
